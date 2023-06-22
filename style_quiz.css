@@ -1,7 +1,107 @@
 * {
     margin: 0, auto;
 }
-.main-container {
+
+/* BUTTON BOOTSTRAP */
+
+
+
+
+
+
+
+/* INDEX  */
+.background-container {
     background-image: linear-gradient(to bottom,#AF06EB, #602CCF);
     height: 100vh;
+}
+.main-container{
+    display: flex;
+    align-items: center;
+    height: 95vh;
+}
+.indexbutton {
+    width: 100%;
+    max-width: 350px;
+    height: 60px;
+    font-size: large;
+}
+.github a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+.logoindex{
+    scale: 80%;
+}
+
+
+/* QUIZ GAME  */
+.background-container-game {
+    background: #555555;
+    height: 100vh;
+}
+
+.menu-quiz{
+    height: 14vh;
+}
+.text-menu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+.text-name{
+    flex-basis: 100%;
+}
+.text-current-question{
+    font-size: 40px;
+}
+
+/* QUESTION TAB  */
+.question-tab{
+    height: 25vh;
+    align-items: center;
+    font-size: 23px;
+}
+
+/* ANSWER TAB  */
+.answer-tab{
+    padding-left: 35px;
+    padding-right: 35px;
+    width: 100%;
+    max-width: 1000px;
+}
+.answer-full{
+    height: 45px;
+    line-height: 45px;
+}
+.letter-answer{
+    width: 100%;
+    max-width: 60px;
+    background-image: linear-gradient(to bottom,#AF06EB, #602CCF);
+    border-radius: 4px;
+    scale: 110%;
+}
+
+.answerbutton {
+    width: 100%;
+    height: 100%;
+    font-size: large;
+}
+/* NEXT QUESTION BUTTON  */
+.gamebutton {
+    width: 100%;
+    max-width: 350px;
+    height: 50px;
+    font-size: large;
+}
+
+/* END QUIZ  */
+
+.end-container{
+    display: flex;
+    align-items: center;
+    height: 80vh;
 }
