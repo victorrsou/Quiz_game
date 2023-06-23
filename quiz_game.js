@@ -7,11 +7,11 @@ var qtd_pontos = 0
 nome_jogador = ""
 
 // VERIFICAR SE EXISTEM AO MENOS TRÊS CARACTERES NO INPUT INDEX 
-function verificarinput(){
+function verificarinput() {
     let input_nome = document.getElementById("input_nome")
     let botao_jogar = document.getElementById("botao_jogar")
 
-    if (input_nome.value.length >= 3){
+    if (input_nome.value.length >= 3) {
         botao_jogar.disabled = false;
     } else {
         botao_jogar.disabled = true;
@@ -19,18 +19,20 @@ function verificarinput(){
 }
 
 // ARMAZENAR NOME INSERIDO NO INPUT 
-function capturarnome(){
-    var nome_jogador = document.getElementById("input_nome").value
+function capturarnome() {
+    var nome = document.getElementById("input_nome").value;
+    localStorage.setItem("nome_jogador", nome);
+    window.location.href = "./quiz_game.html";
 }
 
-// REDIRECIONAR JOGADOR PARA TELA DO JOGO
-function redirecionar(){
-    window.location.href = "./quiz_game.html"
+function inserirnome() {
+    nomeJogador = localStorage.getItem("nome_jogador")
+    document.getElementById("nome_jogador").textContent = nomeJogador
 }
 
-// INSERIR NOME DO JOGADOR 
-recebernome = document.getElementById("nome_jogador")
-recebernome.innerHTML = nome_jogador
+// CARREGAR O NOME NA PÁGINA DO JOGO 
+window.addEventListener("DOMContentLoaded", inserirnome());
+
 
 class quiz {
     constructor(pergunta, alternativa, resposta) {

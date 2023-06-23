@@ -66,6 +66,7 @@
     flex-basis: 100%;
 }
 .text-current-question{
+    margin-left: auto;
     font-size: 40px;
 }
 
