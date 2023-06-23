@@ -1,3 +1,37 @@
+// VARIÁVEIS
+var resposta_inserida = ""
+var resposta_correta = 0
+var perguntas_cadastradas = []
+var qtd_acertos = 0
+var qtd_pontos = 0
+nome_jogador = ""
+
+// VERIFICAR SE EXISTEM AO MENOS TRÊS CARACTERES NO INPUT INDEX 
+function verificarinput(){
+    let input_nome = document.getElementById("input_nome")
+    let botao_jogar = document.getElementById("botao_jogar")
+
+    if (input_nome.value.length >= 3){
+        botao_jogar.disabled = false;
+    } else {
+        botao_jogar.disabled = true;
+    }
+}
+
+// ARMAZENAR NOME INSERIDO NO INPUT 
+function capturarnome(){
+    var nome_jogador = document.getElementById("input_nome").value
+}
+
+// REDIRECIONAR JOGADOR PARA TELA DO JOGO
+function redirecionar(){
+    window.location.href = "./quiz_game.html"
+}
+
+// INSERIR NOME DO JOGADOR 
+recebernome = document.getElementById("nome_jogador")
+recebernome.innerHTML = nome_jogador
+
 class quiz {
     constructor(pergunta, alternativa, resposta) {
         this.pergunta = pergunta;
@@ -6,12 +40,6 @@ class quiz {
     }
 }
 
-// VARIÁVEIS
-var resposta_inserida = ""
-var resposta_correta = 0
-var perguntas_cadastradas = []
-var qtd_acertos = 0
-var qtd_pontos = 0
 
 // OBJETOS CRIADOS A PARTIR DA CLASSE
 var quiz1 = new quiz("De quem é a famosa frase 'Penso, logo existo'?", ["Platão", "Galileu Galilei", "Descartes", "Sócrates", "Francis Bacon"], "Descartes")

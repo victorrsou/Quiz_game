@@ -20,17 +20,20 @@
                     <img src="./images/logo.png" alt="logo" class="logoindex">
                 </div>
                 <div class="d-flex justify-content-center p-3">
+                    <!-- INSERIR O NOME  -->
                     <input class="form-control indexbutton" type="text" placeholder="Default input"
-                        aria-label="default input example">
+                        aria-label="default input example" id="input_nome" oninput="verificarinput()">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary indexbutton">Jogar!</button>
+                    <!-- BOTÃO JOGAR  -->
+                    <button href="./quiz_game.html" type="button" class="btn btn-primary indexbutton" disabled id="botao_jogar"
+                        onclick="capturarnome(), redirecionar()">Jogar!</button>
                 </div>
             </div>
         </div>
-            <footer class="text-center github">
-                <a href="https://github.com/victorrsou">github.com/victorrsou</a>
-            </footer>
+        <footer class="text-center github">
+            <a href="https://github.com/victorrsou">github.com/victorrsou</a>
+        </footer>
     </div>
 </body>
 <!-- JAVASCRIPT BOOTSTRAP  -->
