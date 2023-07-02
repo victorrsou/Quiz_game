@@ -83,6 +83,7 @@
     padding-right: 35px;
     width: 100%;
     max-width: 1000px;
+    height: 45vh;
 }
 .answer-full{
     height: 45px;
@@ -101,6 +102,14 @@
     height: 100%;
     font-size: large;
 }
+/* CLASSE ADICIONADA PELO JAVASCRIPT */
+.opcaoselecionada {
+    background-color: #602CCF;
+}
+.opcaoselecionada:hover {
+    background-color: #602CCF;
+}
+
 /* NEXT QUESTION BUTTON  */
 .gamebutton {
     width: 100%;
