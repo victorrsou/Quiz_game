@@ -33,6 +33,20 @@ function inserirnome() {
 // CARREGAR O NOME NA PÁGINA DO JOGO 
 window.addEventListener("DOMContentLoaded", inserirnome());
 
+// OPÇÃO QUE PERMITE SELECIONAR APENAS UMA ALTERNATIVA 
+var opcao = document.getElementsByClassName("answerbutton")
+var opcaoselecionada = null
+
+function selecionaropcao (answerbutton) {
+    if (opcaoselecionada) {
+        opcaoselecionada.classList.remove("opcaoselecionada")
+    }
+
+    // classe criada e tratada pelo css 
+    opcaoselecionada = opcao[answerbutton - 1]
+    opcaoselecionada.classList.add("opcaoselecionada")
+}
+
 
 class quiz {
     constructor(pergunta, alternativa, resposta) {
@@ -72,6 +86,7 @@ alternativa_b.innerHTML = perguntas_cadastradas[0].alternativa[1]
 alternativa_c.innerHTML = perguntas_cadastradas[0].alternativa[2]
 alternativa_d.innerHTML = perguntas_cadastradas[0].alternativa[3]
 alternativa_e.innerHTML = perguntas_cadastradas[0].alternativa[4]
+
 
 
 
