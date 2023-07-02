@@ -50,6 +50,44 @@ function selecionaropcao(answerbutton) {
     opcaoselecionada.classList.add("opcaoselecionada")
 }
 
+function proximapergunta() {
+
+    if () {
+
+        // capturar a alternativa marcada e quando estiver correta, adicionar 100 pontos 
+        if (opcaoselecionada == (perguntas_cadastradas[indiceperguntaatual].resposta)) {
+            pontuacaoatual = pontuacaoatual + 100
+            var pontuacao = document.getElementById("pontuacao")
+            pontuacao.textContent = pontuacaoatual
+
+
+        }
+
+
+
+        // aumenta o valor da questão atual 
+        questaoatual = document.getElementById("questaoatual")
+        questaoatualvalor = questaoatualvalor + 1
+        questaoatual.textContent = questaoatualvalor
+
+        // aumenta o valor da pontuação atual
+
+
+
+        indiceperguntaatual = indiceperguntaatual + 1
+        pergunta_escrita.textContent = perguntas_cadastradas[indiceperguntaatual].pergunta
+
+        alternativa_a.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
+        alternativa_b.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
+        alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
+        alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
+        alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
+    } else {
+
+    }
+
+}
+
 
 class quiz {
     constructor(pergunta, alternativa, resposta) {
@@ -76,7 +114,7 @@ perguntas_cadastradas.push(quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz
 contador_perguntas = perguntas_cadastradas.length
 
 pergunta_escrita = document.getElementById("question-js")
-pergunta_escrita.innerHTML = perguntas_cadastradas[0].pergunta
+pergunta_escrita.textContent = perguntas_cadastradas[0].pergunta
 
 alternativa_a = document.getElementById("alternativa_a")
 alternativa_b = document.getElementById("alternativa_b")
@@ -84,44 +122,11 @@ alternativa_c = document.getElementById("alternativa_c")
 alternativa_d = document.getElementById("alternativa_d")
 alternativa_e = document.getElementById("alternativa_e")
 
-alternativa_a.innerHTML = perguntas_cadastradas[0].alternativa[0]
-alternativa_b.innerHTML = perguntas_cadastradas[0].alternativa[1]
-alternativa_c.innerHTML = perguntas_cadastradas[0].alternativa[2]
-alternativa_d.innerHTML = perguntas_cadastradas[0].alternativa[3]
-alternativa_e.innerHTML = perguntas_cadastradas[0].alternativa[4]
-
-
-function proximapergunta() {
-
-    questaoatual = document.getElementById("questaoatual")
-    questaoatualvalor = questaoatualvalor + 1
-    questaoatual.textContent = questaoatualvalor
-
-    pontuacaoatual = pontuacaoatual + 100
-
-    var pontuacao = document.getElementById("pontuacao")
-    pontuacao.textContent = pontuacaoatual
-
-    if (opcaoselecionada) {
-        opcaoselecionada = perguntas_cadastradas[indiceperguntaatual].resposta
-
-
-        opcaoselecionada.classList.remove("opcaoselecionada")
-    }
-
-    indiceperguntaatual = indiceperguntaatual + 1
-    pergunta_escrita.innerHTML = perguntas_cadastradas[indiceperguntaatual].pergunta
-
-    alternativa_a.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
-    alternativa_b.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
-    alternativa_c.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
-    alternativa_d.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
-    alternativa_e.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
-
-
-}
-
-
+alternativa_a.textContent = perguntas_cadastradas[0].alternativa[0]
+alternativa_b.textContent = perguntas_cadastradas[0].alternativa[1]
+alternativa_c.textContent = perguntas_cadastradas[0].alternativa[2]
+alternativa_d.textContent = perguntas_cadastradas[0].alternativa[3]
+alternativa_e.textContent = perguntas_cadastradas[0].alternativa[4]
 if (opcaoselecionada) {
 
 }
