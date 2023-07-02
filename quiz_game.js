@@ -4,7 +4,10 @@ var resposta_correta = 0
 var perguntas_cadastradas = []
 var qtd_acertos = 0
 var qtd_pontos = 0
-nome_jogador = ""
+var nome_jogador = ""
+var indiceperguntaatual = 0
+var pontuacaoatual = 0
+var questaoatualvalor = 1
 
 // VERIFICAR SE EXISTEM AO MENOS TRÊS CARACTERES NO INPUT INDEX 
 function verificarinput() {
@@ -37,7 +40,7 @@ window.addEventListener("DOMContentLoaded", inserirnome());
 var opcao = document.getElementsByClassName("answerbutton")
 var opcaoselecionada = null
 
-function selecionaropcao (answerbutton) {
+function selecionaropcao(answerbutton) {
     if (opcaoselecionada) {
         opcaoselecionada.classList.remove("opcaoselecionada")
     }
@@ -88,6 +91,40 @@ alternativa_d.innerHTML = perguntas_cadastradas[0].alternativa[3]
 alternativa_e.innerHTML = perguntas_cadastradas[0].alternativa[4]
 
 
+function proximapergunta() {
+
+    questaoatual = document.getElementById("questaoatual")
+    questaoatualvalor = questaoatualvalor + 1
+    questaoatual.textContent = questaoatualvalor
+
+    pontuacaoatual = pontuacaoatual + 100
+
+    var pontuacao = document.getElementById("pontuacao")
+    pontuacao.textContent = pontuacaoatual
+
+    if (opcaoselecionada) {
+        opcaoselecionada = perguntas_cadastradas[indiceperguntaatual].resposta
+
+
+        opcaoselecionada.classList.remove("opcaoselecionada")
+    }
+
+    indiceperguntaatual = indiceperguntaatual + 1
+    pergunta_escrita.innerHTML = perguntas_cadastradas[indiceperguntaatual].pergunta
+
+    alternativa_a.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
+    alternativa_b.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
+    alternativa_c.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
+    alternativa_d.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
+    alternativa_e.innerHTML = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
+
+
+}
+
+
+if (opcaoselecionada) {
+
+}
 
 
 

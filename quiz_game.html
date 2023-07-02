@@ -18,9 +18,9 @@
             <img src="./images/logo.png" alt="logo">
             <div class="text-menu ps-3 text-white">
                 <span class="text-name" id="nome_jogador">Victor</span>
-                <p class="text-name">Pontuação: 100</p>
+                <p class="text-name">Pontuação: <span id="pontuacao">0</span></p>
             </div>
-            <p class="current_question text-current-question text-white">1/10</p>
+            <p class="current_question text-current-question text-white"><span id="questaoatual">1</span>/10</p>
         </div>
 
         <!-- QUESTION TAB -->
@@ -79,9 +79,9 @@
 
         <!-- NEXT QUESTION BUTTON  -->
         <div class="d-flex justify-content-center btnnextquestion">
-            <button type="button" class="letter-answer btn btn-primary gamebutton">Próxima pergunta</button>
+            <button type="button" class="letter-answer btn btn-primary gamebutton" onclick="proximapergunta()">Próxima pergunta</button>
         </div>
-        <footer class="text-center github mt-2">
+        <footer class="text-center github mt-3">
             <a href="https://github.com/victorrsou">github.com/victorrsou</a>
         </footer>
     </div>
