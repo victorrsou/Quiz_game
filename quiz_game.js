@@ -39,20 +39,39 @@ window.addEventListener("DOMContentLoaded", inserirnome());
 // OPÇÃO QUE PERMITE SELECIONAR APENAS UMA ALTERNATIVA 
 var opcao = document.getElementsByClassName("answerbutton")
 var opcaoselecionada = null
+var indice_questaomarcada = null
 
-function selecionaropcao(answerbutton) {
+function selecionaropcao(altselecionada) {
     if (opcaoselecionada) {
         opcaoselecionada.classList.remove("opcaoselecionada")
+        indice_questaomarcada = null
     }
 
-    // classe criada e tratada pelo css 
-    opcaoselecionada = opcao[answerbutton - 1]
+    // classe criada e tratada pelo css -- "-1 para se tornar o índice começando de '0'"
+    opcaoselecionada = opcao[altselecionada - 1]
     opcaoselecionada.classList.add("opcaoselecionada")
+    indice_questaomarcada = altselecionada
 }
 
 function proximapergunta() {
 
-    if () {
+    // observação: o valor do 'indice_questaomarcada' está começando do valor '1'
+    if (indice_questaomarcada) {
+
+        // Estrutura de remoção da marcação da alternativa 
+        if (opcaoselecionada) {
+            opcaoselecionada.classList.remove("opcaoselecionada")
+            indice_questaomarcada = null
+        }
+
+        // Identifica qual é a resposta correta da pergunta atual
+        for (i = 0; i < (perguntas_cadastradas[indiceperguntaatual].alternativa.length); i++) {
+            if (perguntas_cadastradas[indiceperguntaatual].alternativa[i] == perguntas_cadastradas[indiceperguntaatual].resposta)
+                resposta_correta = perguntas_cadastradas[indiceperguntaatual].alternativa[i]
+        }
+
+
+        // if () {
 
         // capturar a alternativa marcada e quando estiver correta, adicionar 100 pontos 
         if (opcaoselecionada == (perguntas_cadastradas[indiceperguntaatual].resposta)) {
@@ -127,6 +146,7 @@ alternativa_b.textContent = perguntas_cadastradas[0].alternativa[1]
 alternativa_c.textContent = perguntas_cadastradas[0].alternativa[2]
 alternativa_d.textContent = perguntas_cadastradas[0].alternativa[3]
 alternativa_e.textContent = perguntas_cadastradas[0].alternativa[4]
+
 if (opcaoselecionada) {
 
 }
