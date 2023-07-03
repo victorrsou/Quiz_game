@@ -8,6 +8,7 @@ var nome_jogador = ""
 var indiceperguntaatual = 0
 var pontuacaoatual = 0
 var questaoatualvalor = 1
+var indice_correto = null
 
 // VERIFICAR SE EXISTEM AO MENOS TRÊS CARACTERES NO INPUT INDEX 
 function verificarinput() {
@@ -58,28 +59,19 @@ function proximapergunta() {
     // observação: o valor do 'indice_questaomarcada' está começando do valor '1'
     if (indice_questaomarcada) {
 
-        // Estrutura de remoção da marcação da alternativa 
-        if (opcaoselecionada) {
-            opcaoselecionada.classList.remove("opcaoselecionada")
-            indice_questaomarcada = null
-        }
-
-        // Identifica qual é a resposta correta da pergunta atual
+        // Identifica qual é a resposta correta da pergunta atual. varre as ALTERNATIVAS
         for (i = 0; i < (perguntas_cadastradas[indiceperguntaatual].alternativa.length); i++) {
-            if (perguntas_cadastradas[indiceperguntaatual].alternativa[i] == perguntas_cadastradas[indiceperguntaatual].resposta)
+            if (perguntas_cadastradas[indiceperguntaatual].alternativa[i] == perguntas_cadastradas[indiceperguntaatual].resposta) {
                 resposta_correta = perguntas_cadastradas[indiceperguntaatual].alternativa[i]
+                indice_correto = i
+            }
         }
-
-
-        // if () {
 
         // capturar a alternativa marcada e quando estiver correta, adicionar 100 pontos 
-        if (opcaoselecionada == (perguntas_cadastradas[indiceperguntaatual].resposta)) {
+        if ((indice_questaomarcada - 1) == indice_correto) {
             pontuacaoatual = pontuacaoatual + 100
             var pontuacao = document.getElementById("pontuacao")
             pontuacao.textContent = pontuacaoatual
-
-
         }
 
 
@@ -101,7 +93,17 @@ function proximapergunta() {
         alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
         alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
         alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
+
+
+        // Estrutura de remoção da marcação da alternativa 
+        if (opcaoselecionada) {
+            opcaoselecionada.classList.remove("opcaoselecionada")
+            indice_questaomarcada = null
+        }
+
     } else {
+
+        // ADICIONAR AÇÃO PARA QUANDO A PESSOA CLICAR EM PROXIMA PERGUNTA, SEM TER UMA ALTERNATIVA SELECIONADA 
 
     }
 

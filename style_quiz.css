@@ -95,6 +95,7 @@
     background-image: linear-gradient(to bottom,#AF06EB, #602CCF);
     border-radius: 4px;
     scale: 110%;
+    border: #602CCF;
 }
 
 .answerbutton {
@@ -103,11 +104,18 @@
     font-size: large;
 }
 /* CLASSE ADICIONADA PELO JAVASCRIPT */
+
 .opcaoselecionada {
-    background-color: #602CCF;
+    background: linear-gradient(to bottom,#AF06EB, #602CCF);
+    border: #602CCF;
+    color: #ffffff;
+    transition: all 0.5s;
 }
 .opcaoselecionada:hover {
-    background-color: #602CCF;
+    background: linear-gradient(to bottom,#9806ce, #5024ad);
+    border: #592abe;
+    color: #c0bfbf;
+    transition: all 0.5s;
 }
 
 /* NEXT QUESTION BUTTON  */
