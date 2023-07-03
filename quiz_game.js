@@ -74,40 +74,65 @@ function proximapergunta() {
             pontuacao.textContent = pontuacaoatual
         }
 
+        // aumenta o valor da questão atual e direciona para a página final, end_quiz
+        if (questaoatualvalor < contador_perguntas) {
+            questaoatual = document.getElementById("questaoatual")
+            questaoatualvalor = questaoatualvalor + 1
+            questaoatual.textContent = questaoatualvalor
+
+            // aumenta o valor da pergunta atual
+            indiceperguntaatual = indiceperguntaatual + 1
+            pergunta_escrita.textContent = perguntas_cadastradas[indiceperguntaatual].pergunta
+
+            alternativa_a.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
+            alternativa_b.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
+            alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
+            alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
+            alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
 
 
-        // aumenta o valor da questão atual 
-        questaoatual = document.getElementById("questaoatual")
-        questaoatualvalor = questaoatualvalor + 1
-        questaoatual.textContent = questaoatualvalor
-
-        // aumenta o valor da pontuação atual
-
-
-
-        indiceperguntaatual = indiceperguntaatual + 1
-        pergunta_escrita.textContent = perguntas_cadastradas[indiceperguntaatual].pergunta
-
-        alternativa_a.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
-        alternativa_b.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
-        alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
-        alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
-        alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
+            // Estrutura de remoção da marcação da alternativa 
+            if (opcaoselecionada) {
+                opcaoselecionada.classList.remove("opcaoselecionada")
+                indice_questaomarcada = null
+            }
+        } else {
 
 
-        // Estrutura de remoção da marcação da alternativa 
-        if (opcaoselecionada) {
-            opcaoselecionada.classList.remove("opcaoselecionada")
-            indice_questaomarcada = null
+            // falta concluir 
+            capturarpontos(pontuacaoatual);
+            inserirpontos();
         }
+
 
     } else {
 
-        // ADICIONAR AÇÃO PARA QUANDO A PESSOA CLICAR EM PROXIMA PERGUNTA, SEM TER UMA ALTERNATIVA SELECIONADA 
+        // ADICIONAR AÇÃO PARA QUANDO A PESSOA CLICAR EM PROXIMA PERGUNTA, SEM UMA ALTERNATIVA SELECIONADA 
 
     }
 
 }
+
+function exibirfim() {
+
+
+
+}
+
+function capturarpontos(valor) {
+
+    localStorage.setItem("pontosfinais", valor)
+    window.location.href = "./end_quiz.html";
+}
+
+function inserirpontos() {
+
+    document.addEventListener("DOMContentLoaded", function() {
+        pontosjogador = localStorage.getItem("pontosfinais")
+        document.getElementById("pontuacao").textContent = pontosjogador
+    })
+}
+
 
 
 class quiz {

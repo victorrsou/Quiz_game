@@ -25,6 +25,17 @@
     background-image: linear-gradient(to bottom,#AF06EB, #602CCF);
     height: 100vh;
 }
+
+.background-formas {
+    background-image: url(./images/BG\ 35.png);
+    animation: background-movement 17s linear infinite;
+}
+
+@keyframes background-movement {
+    0% {background-position: 0 0;}
+    100% {background-position: 100% 100%;}
+}
+
 .main-container{
     display: flex;
     align-items: center;
@@ -96,6 +107,13 @@
     border-radius: 4px;
     scale: 110%;
     border: #602CCF;
+}
+
+.letter-answer:hover {
+    background: linear-gradient(to bottom,#9806ce, #5024ad);
+    border: #592abe;
+    color: #c0bfbf;
+    transition: all 0.5s;
 }
 
 .answerbutton {
