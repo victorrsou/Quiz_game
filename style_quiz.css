@@ -28,7 +28,7 @@
 
 .background-formas {
     background-image: url(./images/BG\ 35.png);
-    animation: background-movement 17s linear infinite;
+    animation: background-movement 30s linear infinite;
 }
 
 @keyframes background-movement {
@@ -52,6 +52,7 @@
     justify-content: center;
     text-decoration: none;
     color: white;
+    height: 5vh;
 }
 .logoindex{
     scale: 80%;
@@ -61,7 +62,6 @@
 /* QUIZ GAME  */
 .background-container-game {
     background: #555555;
-    height: 100vh;
 }
 
 .menu-quiz{
@@ -94,10 +94,8 @@
     padding-right: 35px;
     width: 100%;
     max-width: 1000px;
-    height: 100%;
 }
 .answer-full{
-    height: 7vh;
     line-height: 45px;
 }
 .letter-answer{
@@ -137,15 +135,19 @@
 }
 
 /* NEXT QUESTION BUTTON  */
+.btnnextquestion {
+    height: 16vh;
+    align-items: center;
+}
 .gamebutton {
     width: 100%;
     max-width: 350px;
-    height: 80%;
+    height: 50%;
     font-size: large;
 }
 
-/* END QUIZ  */
 
+/* END QUIZ  */
 .end-container{
     display: flex;
     align-items: center;
