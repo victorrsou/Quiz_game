@@ -83,7 +83,7 @@
 
 /* QUESTION TAB  */
 .question-tab{
-    height: 25vh;
+    height: 20vh;
     align-items: center;
     font-size: 23px;
 }
@@ -94,10 +94,10 @@
     padding-right: 35px;
     width: 100%;
     max-width: 1000px;
-    height: 45vh;
+    height: 100%;
 }
 .answer-full{
-    height: 45px;
+    height: 7vh;
     line-height: 45px;
 }
 .letter-answer{
@@ -140,7 +140,7 @@
 .gamebutton {
     width: 100%;
     max-width: 350px;
-    height: 50px;
+    height: 80%;
     font-size: large;
 }
 
