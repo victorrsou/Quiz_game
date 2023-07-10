@@ -121,6 +121,13 @@
 }
 /* CLASSE ADICIONADA PELO JAVASCRIPT */
 
+.opcaocorreta {
+    background: linear-gradient(to bottom,#3ceb06, #5acf2c);
+    border: #68cf2c;
+    color: #ffffff;
+    transition: all 0.5s;
+}
+
 .opcaoselecionada {
     background: linear-gradient(to bottom,#AF06EB, #602CCF);
     border: #602CCF;

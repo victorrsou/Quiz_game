@@ -54,6 +54,20 @@ function selecionaropcao(altselecionada) {
     indice_questaomarcada = altselecionada
 }
 
+function mostrar_alternativa_correta(resposta) {
+
+    if (resposta.classList.contains("opcaoselecionada")){
+        resposta.classList.remove("opcaoselecionada")
+    }
+
+    resposta.classList.add("opcaocorreta");
+    
+
+    setTimeout(function () {
+        resposta.classList.remove("opcaocorreta")
+    }, 2000)
+}
+
 function proximapergunta() {
 
     // observação: o valor do 'indice_questaomarcada' está começando do valor '1'
@@ -67,44 +81,69 @@ function proximapergunta() {
             }
         }
 
-        // capturar a alternativa marcada e quando estiver correta, adicionar 100 pontos 
-        if ((indice_questaomarcada - 1) == indice_correto) {
-            pontuacaoatual = pontuacaoatual + 100
-            var pontuacao = document.getElementById("pontuacao")
-            pontuacao.textContent = pontuacaoatual
+
+        let resposta_correta_id = 0
+
+        switch (indice_correto) {
+            case 0:
+                resposta_correta_id = alternativa_a
+                break
+            case 1:
+                resposta_correta_id = alternativa_b
+                break
+            case 2:
+                resposta_correta_id = alternativa_c
+                break
+            case 3:
+                resposta_correta_id = alternativa_d
+                break
+            case 4:
+                resposta_correta_id = alternativa_e
+                break
         }
 
-        // aumenta o valor da questão atual e direciona para a página final, end_quiz
-        if (questaoatualvalor < contador_perguntas) {
-            questaoatual = document.getElementById("questaoatual")
-            questaoatualvalor = questaoatualvalor + 1
-            questaoatual.textContent = questaoatualvalor
+        // Adicionar função que mostra a alternativa correta por 2 segundos
+        mostrar_alternativa_correta(resposta_correta_id)
 
-            // aumenta o valor da pergunta atual
-            indiceperguntaatual = indiceperguntaatual + 1
-            pergunta_escrita.textContent = perguntas_cadastradas[indiceperguntaatual].pergunta
-
-            alternativa_a.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
-            alternativa_b.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
-            alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
-            alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
-            alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
-
-
-            // Estrutura de remoção da marcação da alternativa 
-            if (opcaoselecionada) {
-                opcaoselecionada.classList.remove("opcaoselecionada")
-                indice_questaomarcada = null
+        // Aqui, o restante do código somente será executado após o intervalo de 2 segundos. 
+        setTimeout(function () {
+            // capturar a alternativa marcada e quando estiver correta, adicionar 100 pontos 
+            if ((indice_questaomarcada - 1) == indice_correto) {
+                pontuacaoatual = pontuacaoatual + 100
+                var pontuacao = document.getElementById("pontuacao")
+                pontuacao.textContent = pontuacaoatual
             }
-        } else {
+
+            // aumenta o valor da questão atual e direciona para a página final, end_quiz
+            if (questaoatualvalor < contador_perguntas) {
+                questaoatual = document.getElementById("questaoatual")
+                questaoatualvalor = questaoatualvalor + 1
+                questaoatual.textContent = questaoatualvalor
+
+                // aumenta o valor da pergunta atual
+                indiceperguntaatual = indiceperguntaatual + 1
+                pergunta_escrita.textContent = perguntas_cadastradas[indiceperguntaatual].pergunta
+
+                alternativa_a.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[0]
+                alternativa_b.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[1]
+                alternativa_c.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[2]
+                alternativa_d.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[3]
+                alternativa_e.textContent = perguntas_cadastradas[indiceperguntaatual].alternativa[4]
 
 
-            // falta concluir 
-            capturarpontos(pontuacaoatual);
-            inserirpontos();
-        }
+                // Estrutura de remoção da marcação da alternativa 
+                if (opcaoselecionada) {
+                    opcaoselecionada.classList.remove("opcaoselecionada")
+                    indice_questaomarcada = null
+                }
+            } else {
 
 
+                // falta concluir 
+                capturarpontos(pontuacaoatual);
+                inserirpontos();
+            }
+        }, 2000)
     } else {
 
         // ADICIONAR AÇÃO PARA QUANDO A PESSOA CLICAR EM PROXIMA PERGUNTA, SEM UMA ALTERNATIVA SELECIONADA 
@@ -127,7 +166,7 @@ function capturarpontos(valor) {
 
 function inserirpontos() {
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         pontosjogador = localStorage.getItem("pontosfinais")
         document.getElementById("pontuacao").textContent = pontosjogador
     })
@@ -173,10 +212,6 @@ alternativa_b.textContent = perguntas_cadastradas[0].alternativa[1]
 alternativa_c.textContent = perguntas_cadastradas[0].alternativa[2]
 alternativa_d.textContent = perguntas_cadastradas[0].alternativa[3]
 alternativa_e.textContent = perguntas_cadastradas[0].alternativa[4]
-
-if (opcaoselecionada) {
-
-}
 
 
 
