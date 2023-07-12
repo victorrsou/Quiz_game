@@ -35,7 +35,10 @@ function inserirnome() {
 }
 
 // CARREGAR O NOME NA PÁGINA DO JOGO 
-window.addEventListener("DOMContentLoaded", inserirnome());
+window.addEventListener("DOMContentLoaded", function() {
+    inserirnome();
+    inserirpontosNaPaginaFinal()
+});
 
 // OPÇÃO QUE PERMITE SELECIONAR APENAS UMA ALTERNATIVA 
 var opcao = document.getElementsByClassName("answerbutton")
@@ -157,7 +160,6 @@ function proximapergunta() {
 
                 // falta concluir 
                 capturarpontos();
-                inserirpontosNaPaginaFinal();
             }
         }, 1500)
     } else {
@@ -167,7 +169,6 @@ function proximapergunta() {
     }
 
 }
-
 
 class quiz {
     constructor(pergunta, alternativa, resposta) {
