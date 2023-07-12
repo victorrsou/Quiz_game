@@ -161,7 +161,17 @@
     height: 80vh;
 }
 
+.mensagemfinal {
+    flex-wrap: wrap;
+}
+
+.mensagemfinalprimeira {
+    font-size: 1.6em;
+    text-align: center;
+    flex-basis: 100%;
+}
+
 .destaquepontos {
     color: #3ceb06;
-    font-size: 1em;
+    font-size: 1.6em;
 }

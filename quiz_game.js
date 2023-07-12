@@ -170,6 +170,10 @@ function proximapergunta() {
 
 }
 
+function jogarnovamente() {
+    window.location.href = "./index.html";
+}
+
 class quiz {
     constructor(pergunta, alternativa, resposta) {
         this.pergunta = pergunta;
