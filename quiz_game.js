@@ -56,17 +56,34 @@ function selecionaropcao(altselecionada) {
 
 function mostrar_alternativa_correta(resposta) {
 
-    if (resposta.classList.contains("opcaoselecionada")){
+    if (resposta.classList.contains("opcaoselecionada")) {
         resposta.classList.remove("opcaoselecionada")
     }
 
     resposta.classList.add("opcaocorreta");
-    
+
 
     setTimeout(function () {
         resposta.classList.remove("opcaocorreta")
-    }, 2000)
+    }, 1500)
 }
+
+function exibirfim() {
+
+}
+
+function capturarpontos() {
+    var valor = document.getElementById("pontuacao").textContent;
+    localStorage.setItem("pontosfinais", valor)
+    window.location.href = "./end_quiz.html?pontos=" + valor;
+}
+
+function inserirpontosNaPaginaFinal() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var pontos = urlParams.get("pontos");
+    var tagpontosfim = document.getElementById("pontuacaoend");
+    tagpontosfim.textContent = pontos;
+  }
 
 function proximapergunta() {
 
@@ -138,12 +155,11 @@ function proximapergunta() {
                 }
             } else {
 
-
                 // falta concluir 
-                capturarpontos(pontuacaoatual);
-                inserirpontos();
+                capturarpontos();
+                inserirpontosNaPaginaFinal();
             }
-        }, 2000)
+        }, 1500)
     } else {
 
         // ADICIONAR AÇÃO PARA QUANDO A PESSOA CLICAR EM PROXIMA PERGUNTA, SEM UMA ALTERNATIVA SELECIONADA 
@@ -151,27 +167,6 @@ function proximapergunta() {
     }
 
 }
-
-function exibirfim() {
-
-
-
-}
-
-function capturarpontos(valor) {
-
-    localStorage.setItem("pontosfinais", valor)
-    window.location.href = "./end_quiz.html";
-}
-
-function inserirpontos() {
-
-    document.addEventListener("DOMContentLoaded", function () {
-        pontosjogador = localStorage.getItem("pontosfinais")
-        document.getElementById("pontuacao").textContent = pontosjogador
-    })
-}
-
 
 
 class quiz {
