@@ -28,7 +28,8 @@
 
 .background-formas {
     background-image: url(./images/BG\ 35.png);
-    animation: background-movement 30s linear infinite;
+    animation: background-movement 27s linear infinite;
+    height: 100%;
 }
 
 @keyframes background-movement {
@@ -54,10 +55,22 @@
     color: white;
     height: 5vh;
 }
+
+.githubfim a{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
 .logoindex{
     scale: 80%;
 }
 
+.logofim{
+    scale: 60%;
+}
 
 /* QUIZ GAME  */
 .background-container-game {
@@ -157,12 +170,13 @@
 /* END QUIZ  */
 .end-container{
     display: flex;
-    align-items: center;
-    height: 80vh;
+    align-items: flex-end;
+    height: 70vh;
 }
 
 .mensagemfinal {
     flex-wrap: wrap;
+    line-height: 2vh;
 }
 
 .mensagemfinalprimeira {
