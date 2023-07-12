@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style_quiz.css">
+    <title>Quiz Game</title>
+</head>
+
+<body class="background-container-game">
+    <div class="container-fluid background-formas">
+        <!-- MENU QUIZ  -->
+        <div class="container menu-quiz d-flex pt-3">
+            <img src="../images/logo.png" alt="logo">
+            <div class="text-menu ps-3 text-white">
+                <span class="text-name" id="nome_jogador">Victor</span>
+                <p class="text-name">Pontuação: <span id="pontuacao">0</span></p>
+            </div>
+            <p class="current_question text-current-question text-white"><span id="questaoatual">1</span>/10</p>
+        </div>
+
+        <!-- QUESTION TAB -->
+        <div id="question-js" class="container question-tab d-flex justify-content-center text-white">
+            <p>Qual a resposta para essa pergunta? </p>
+        </div>
+
+        <!-- ANSWERS TAB  -->
+        <div class="container answer-tab mb-3">
+            <div class="row answer-full mb-2">
+                <div class="col letter-answer text-center text-white">
+                    A
+                </div>
+                <div class="col text-answer">
+                    <button type="button" class="shadow btn btn-light answerbutton text-start alternativa"
+                        onclick="selecionaropcao(1)" id="alternativa_a">ALTERNATIVA A</button>
+                </div>
+            </div>
+            <div class="row answer-full mb-2">
+                <div class="col letter-answer text-center text-white">
+                    B
+                </div>
+                <div class="col text-answer">
+                    <button type="button" class="shadow btn btn-light answerbutton text-start alternativa"
+                        onclick="selecionaropcao(2)" id="alternativa_b">ALTERNATIVA B</button>
+                </div>
+            </div>
+            <div class="row answer-full mb-2">
+                <div class="col letter-answer text-center text-white">
+                    C
+                </div>
+                <div class="col text-answer">
+                    <button type="button" class="shadow btn btn-light answerbutton text-start alternativa"
+                        onclick="selecionaropcao(3)" id="alternativa_c">ALTERNATIVA C</button>
+                </div>
+            </div>
+            <div class="row answer-full mb-2">
+                <div class="col letter-answer text-center text-white">
+                    D
+                </div>
+                <div class="col text-answer">
+                    <button type="button" class="shadow btn btn-light answerbutton text-start alternativa"
+                        onclick="selecionaropcao(4)" id="alternativa_d">ALTERNATIVA D</button>
+                </div>
+            </div>
+            <div class="row answer-full mb-2">
+                <div class="col letter-answer text-center text-white">
+                    E
+                </div>
+                <div class="col text-answer">
+                    <button type="button" class="shadow btn btn-light answerbutton text-start alternativa"
+                        onclick="selecionaropcao(5)" id="alternativa_e">ALTERNATIVA E</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEXT QUESTION BUTTON  -->
+        <div class="d-flex justify-content-center btnnextquestion">
+            <button type="button" class="letter-answer btn btn-primary gamebutton shadow" onclick="proximapergunta()">Próxima pergunta</button>
+        </div>
+        <footer class="text-center github mt-3">
+            <a href="https://github.com/victorrsou">github.com/victorrsou</a>
+        </footer>
+    </div>
+</body>
+<!-- JAVASCRIPT BOOTSTRAP  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<script src="../quiz_game.js"></script>
+
+</html>

@@ -26,7 +26,7 @@ function verificarinput() {
 function capturarnome() {
     var nome = document.getElementById("input_nome").value;
     localStorage.setItem("nome_jogador", nome);
-    window.location.href = "./quiz_game.html";
+    window.location.href = "./paginas/quiz_game.html";
 }
 
 function inserirnome() {
@@ -78,7 +78,7 @@ function exibirfim() {
 function capturarpontos() {
     var valor = document.getElementById("pontuacao").textContent;
     localStorage.setItem("pontosfinais", valor)
-    window.location.href = "./end_quiz.html?pontos=" + valor;
+    window.location.href = "end_quiz.html?pontos=" + valor;
 }
 
 function inserirpontosNaPaginaFinal() {
@@ -158,7 +158,6 @@ function proximapergunta() {
                 }
             } else {
 
-                // falta concluir 
                 capturarpontos();
             }
         }, 1500)
